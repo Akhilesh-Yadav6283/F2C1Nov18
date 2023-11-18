@@ -63,12 +63,14 @@ function sortByAge(){
      const sortedData = [...data].sort((a, b) =>a.age - b.age);
      console.log("Sorted By Age:",sortedData);
 }
-// 9. Update Profession 
-function updateJohnsProfession(){
-    const updateData = data.map(
-        (person) => person.name === "john" ? {...person, profession:"designer"} : person );
-    console.log("Data after updating John's profession:", updateData);
-}
+// 9. Update Profession
+function updateJohnsProfession() {
+    const updatedData = data.map(person =>
+      person.name === "john" ? { ...person, profession: "manager" } : person
+    );
+    console.log("Data after updating John's profession:", updatedData);
+  }
+  
 // 10. Profession Count
 function getTotalProfessions() {
     const professionCount = data.reduce((acc, person) => {
